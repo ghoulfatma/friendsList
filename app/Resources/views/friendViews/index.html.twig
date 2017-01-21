@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2 class="page-header">Bonobo friends {{ user }}</h2>
+        <table class="table table-striped">
+            <thead>
+            <tr> <th>#</th> <th>Nom</th> <th>Famille</th> </tr>
+            </thead>
+            <tbody>
+            {% for friend in friends %}
+            <tr> <th scope="row">{{ friend.id }}</th> <td>{{ friend.nom }}</td> <td>{{ friend.famille }}</td>
+            <td><a href="/friendsList/web/app_dev.php/friends/details/{{ friend.id }}" class="btn btn-success">View</a>
+                <a href="/friendsList/web/app_dev.php/friends/edit/{{ friend.id }}" class="btn btn-default">Edit</a>
+                <a href="/friendsList/web/app_dev.php/friends/delete/{{ friend.id }}" class="btn btn-danger">Delete</a>
+            </td></tr>
+            {% endfor %}
+            </tbody>
+        </table>
+   {% endblock %}

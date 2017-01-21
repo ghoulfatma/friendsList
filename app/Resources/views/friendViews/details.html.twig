@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <a class="btn btn-default" href="/friendsList/web/app_dev.php/friends">Retour Acceuil</a>
+    <hr>
+    <h2 class="page-header">{{ friend.nom }}</h2>
+    <ul class="list-group">
+        <li class="list-group-item">Age: {{ friend.age }}</li>
+        <li class="list-group-item">Famille: {{ friend.famille }}</li>
+        <li class="list-group-item">Race: {{ friend.race }}</li>
+    </ul>
+    <p>
+        {{ friend.nourriture }}
+    </p>
+{% endblock %}

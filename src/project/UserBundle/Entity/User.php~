@@ -1,0 +1,76 @@
+<?php
+
+namespace project\UserBundle\Entity;
+
+use FOS\UserBundle\Model\User as BaseUser;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="fos_user")
+ */
+class User extends BaseUser
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+    
+
+    public function __construct()
+    {
+        parent::__construct();
+        // your own logic
+    }
+
+
+    /**
+     * Set bonobo
+     *
+     * @param \AppBundle\Entity\Bonobo $bonobo
+     *
+     * @return User
+     */
+    public function setBonobo(\AppBundle\Entity\Bonobo $bonobo = null)
+    {
+        $this->bonobo = $bonobo;
+
+        return $this;
+    }
+
+    /**
+     * Get bonobo
+     *
+     * @return \AppBundle\Entity\Bonobo
+     */
+    public function getBonobo()
+    {
+        return $this->bonobo;
+    }
+
+    /**
+     * Set x
+     *
+     * @param string $x
+     *
+     * @return User
+     */
+    public function setX($x)
+    {
+        $this->x = $x;
+
+        return $this;
+    }
+
+    /**
+     * Get x
+     *
+     * @return string
+     */
+    public function getX()
+    {
+        return $this->x;
+    }
+}
